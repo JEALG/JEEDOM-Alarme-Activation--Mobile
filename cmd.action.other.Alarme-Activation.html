@@ -11,31 +11,31 @@
         jeedom.cmd.update['#id#'] = function(_options){
         // Paramètrage du logo
   			// Valeur pour ON ou 1
-      			var srcImglogoON	= ('#logoON-M#'!='#'+'logoON-M#') ? "#logoON-M#" : "alarm-status-T0-lock";
-      			var srcImglogoON_T 	= ('#logoON_type-M#'!='#'+'logoON_type-M#') ? "#logoON_type-M#" : "png";
+      			var srcImglogoON_M	= ('#logoON-M#'!='#'+'logoON-M#') ? "#logoON-M#" : "alarm-status-T0-lock";
+      			var srcImglogoON_M_T 	= ('#logoON_type-M#'!='#'+'logoON_type-M#') ? "#logoON_type-M#" : "png";
 			// Valeur pour OFF ou 0
-      			var srcImglogoOFF	= ('#logoOFF-M#'!='#'+'logoOFF-M#') ? "#logoOFF-M#" : "alarm-status-T0-unlock";
-				var srcImglogoOFF_T = ('#logoOFF_type-M#'!='#'+'logoOFF_type-M#') ? "#logoOFF_type-M#" : "png";
+      			var srcImglogoOFF_M	= ('#logoOFF-M#'!='#'+'logoOFF-M#') ? "#logoOFF-M#" : "alarm-status-T0-unlock";
+				var srcImglogoOFF_M_T = ('#logoOFF_type-M#'!='#'+'logoOFF_type-M#') ? "#logoOFF_type-M#" : "png";
 		// Paramètre "sizeh" & "sizew"
-				var srcImgHeight	= is_numeric('#sizeh-M#') ? parseFloat('#sizeh-M#'):80;
-				var srcImgWidth 	= is_numeric('#sizew-M#') ? parseFloat('#sizew-M#'):80;
-  				var srcImgSize 		= 'height='+srcImgHeight+'px width='+srcImgWidth+'px';
+				var srcImgHeight_M	= is_numeric('#sizeh-M#') ? parseFloat('#sizeh-M#'):80;
+				var srcImgWidth_M 	= is_numeric('#sizew-M#') ? parseFloat('#sizew-M#'):80;
+  				var srcImgSize_M 	= 'height='+srcImgHeight+'px width='+srcImgWidth+'px';
 		// Paramétrage des images
-				var srcImgURL 		= 'plugins/widget/core/template/dashboard/cmd.action.other.Alarme-Activation/';
+				var srcImgURL_M 	= 'plugins/widget/core/template/dashboard/cmd.action.other.Alarme-Activation/';
 
             if (_options.display_value == '1' || _options.display_value == 1 || _options.display_value == '99' || _options.display_value == 99 || _options.display_value == 'on') {
                 if (jeedom.cmd.normalizeName('#name#') == 'on') {
                     $('.cmd[data-cmd_id=#id#]').hide();
                 }else{
                     $('.cmd[data-cmd_id=#id#]').show();
-                    $('.cmd[data-cmd_id=#id#] .iconCmd#id#').empty().append('<img src="'+srcImgURL +srcImglogoON +'.'+ srcImglogoON_T+'" '+srcImgSize+'>');
+                    $('.cmd[data-cmd_id=#id#] .iconCmd#id#').empty().append('<img src="'+srcImgURL_M +srcImglogoON_M +'.'+ srcImglogoON_M_T+'" '+srcImgSize_M+'>');
                 }
             } else {
                 if (jeedom.cmd.normalizeName('#name#') == 'off') {
                     $('.cmd[data-cmd_id=#id#]').hide();
                 }else{
                     $('.cmd[data-cmd_id=#id#]').show();
-                    $('.cmd[data-cmd_id=#id#] .iconCmd#id#').empty().append('<img src="'+srcImgURL +srcImglogoOFF +'.'+ srcImglogoOFF_T+'" '+srcImgSize+'>');
+                    $('.cmd[data-cmd_id=#id#] .iconCmd#id#').empty().append('<img src="'+srcImgURL +srcImglogoOFF_M +'.'+ srcImglogoOFF_M_T+'" '+srcImgSize_M+'>');
                 }
             }
         }
